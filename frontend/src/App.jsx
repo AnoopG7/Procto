@@ -13,7 +13,6 @@ import PreTestCheck from './pages/exam/PreTestCheck.jsx';
 import ExamInterface from './pages/exam/ExamInterface.jsx';
 import SecureExamInterface from './pages/exam/SecureExamInterface.jsx';
 import { ToastProvider } from './hooks/useToast';
-import { Snackbar as CustomSnackbar } from '../components/snackbar/snackbar.js';
 import theme from './theme';
 import './App.css';
 
@@ -123,7 +122,6 @@ function App() {
       <AuthProvider>
         <ToastProvider>
           <Router>
-            <CustomSnackbar />
             <Routes>
             {/* Auth Routes */}
             <Route path="/login" element={

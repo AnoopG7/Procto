@@ -1,9 +1,9 @@
 import React from 'react';
-import { useToast as useToastHook } from '../../src/hooks/useToast';
+import { useToast } from '../../../hooks/useToast';
 import { Snackbar, Alert } from '@mui/material';
 
 export const MUIToaster = () => {
-  const { open, message, severity, autoHideDuration, hideToast } = useToastHook();
+  const { open, message, severity, autoHideDuration, hideToast } = useToast();
   
   return (
     <Snackbar
