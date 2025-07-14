@@ -1,6 +1,6 @@
 import React from 'react';
 import { Snackbar as MUISnackbar, Alert, styled, Portal } from '@mui/material';
-import { useToast } from '../../hooks/useToast';
+import { useToast } from '../../src/hooks/useToast';
 
 // Custom styled Alert component for the toast
 const StyledAlert = styled(Alert)(({ theme }) => ({
