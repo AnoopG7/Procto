@@ -1,11 +1,11 @@
 import type { CSSObject } from '@mui/material/styles';
-
-import { Toaster } from 'sonner';
-import { varAlpha } from 'minimal-shared/utils';
-
 import { styled } from '@mui/material/styles';
-
+import { Snackbar, Alert } from '@mui/material';
 import { snackbarClasses } from './classes';
+import { alpha } from '@mui/material/styles';
+
+// Helper function to replace varAlpha
+const customAlpha = (color: string, opacity: number) => alpha(color, opacity);
 
 // ----------------------------------------------------------------------
 

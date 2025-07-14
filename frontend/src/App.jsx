@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './hooks/useAuth';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import { CircularProgress, Box, Typography, Snackbar, Alert } from '@mui/material';
+import { CircularProgress, Box, Typography, Alert } from '@mui/material';
 import LoginForm from './components/auth/LoginForm';
 import RegisterForm from './components/auth/RegisterForm';
 import IdentityVerification from './components/auth/IdentityVerification';
@@ -12,33 +12,10 @@ import LiveMonitor from './components/admin/LiveMonitor';
 import PreTestCheck from './components/exam/PreTestCheck';
 import ExamInterface from './components/exam/ExamInterface';
 import SecureExamInterface from './components/exam/SecureExamInterface';
-import { ToastProvider, useToast } from './hooks/useToast';
+import { ToastProvider } from './hooks/useToast';
+import { Snackbar as CustomSnackbar } from './components/ui/snackbar/snackbar.jsx';
 import theme from './theme';
 import './App.css';
-
-// Toast Component using MUI Snackbar
-const ToastComponent = () => {
-  const { open, message, severity, autoHideDuration, hideToast } = useToast();
-  
-  return (
-    <Snackbar
-      open={open}
-      autoHideDuration={autoHideDuration}
-      onClose={hideToast}
-      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-    >
-      <Alert 
-        onClose={hideToast} 
-        severity={severity} 
-        variant="filled"
-        elevation={6}
-        sx={{ width: '100%' }}
-      >
-        {message}
-      </Alert>
-    </Snackbar>
-  );
-};
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -146,7 +123,7 @@ function App() {
       <AuthProvider>
         <ToastProvider>
           <Router>
-            <ToastComponent />
+            <CustomSnackbar />
             <Routes>
             {/* Auth Routes */}
             <Route path="/login" element={

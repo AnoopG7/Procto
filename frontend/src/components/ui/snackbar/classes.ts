@@ -21,7 +21,7 @@ export const snackbarClasses = {
   warning: createClasses('snackbar__warning'),
   info: createClasses('snackbar__info'),
   /********/
-  loader: 'sonner-loader',
+  loader: 'mui-loader',
   loaderVisible: '&[data-visible="true"]',
   closeBtnVisible: '[data-close-button="true"]',
 };

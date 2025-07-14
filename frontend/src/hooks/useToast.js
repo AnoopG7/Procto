@@ -4,6 +4,7 @@ const ToastContext = createContext({
   open: false,
   message: '',
   severity: 'info',
+  autoHideDuration: 6000,
   showToast: () => {},
   hideToast: () => {},
 });

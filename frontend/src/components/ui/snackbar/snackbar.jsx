@@ -13,6 +13,16 @@ const StyledAlert = styled(Alert)(({ theme }) => ({
 export function Snackbar() {
   const { open, message, severity, autoHideDuration, hideToast } = useToast();
   
+  // Map string severity to MUI severity type
+  const getMUISeverity = (sev) => {
+    switch(sev) {
+      case 'error': return 'error';
+      case 'success': return 'success';
+      case 'warning': return 'warning';
+      default: return 'info';
+    }
+  };
+  
   return (
     <Portal>
       <MUISnackbar
@@ -20,11 +30,10 @@ export function Snackbar() {
         autoHideDuration={autoHideDuration}
         onClose={hideToast}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-      >        <StyledAlert 
+      >
+        <StyledAlert 
           onClose={hideToast} 
-          severity={severity === 'error' ? 'error' : 
-                 severity === 'success' ? 'success' : 
-                 severity === 'warning' ? 'warning' : 'info'} 
+          severity={getMUISeverity(severity)}
           variant="filled"
           elevation={6}
         >
