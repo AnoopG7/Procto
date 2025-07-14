@@ -588,4 +588,3 @@ For technical support or questions:
 ---
 
 **Procto** - Ensuring Academic Integrity in the Digital Age
-

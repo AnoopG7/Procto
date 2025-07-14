@@ -944,4 +944,3 @@ A: Contact your instructor or academic department to discuss violation reports. 
 - Escalation procedures in place
 
 Remember: The Procto system is designed to ensure fair and secure online examinations. By following this user manual and best practices, you'll have a smooth and successful exam experience.
-
