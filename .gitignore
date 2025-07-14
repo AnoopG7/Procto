@@ -1,3 +1,17 @@
 node_modules/
 .DS_Store
 .env
+.vscode/
+bun.lock
+bun.lockb
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+dist/
+coverage/
+build/
+*.log
+*.tmp
+*.cache
+*.swp
+*.bak
