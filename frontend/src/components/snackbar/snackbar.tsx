@@ -1,6 +1,6 @@
 import React from 'react';
 import { Snackbar as MUISnackbar, Alert, styled, Portal } from '@mui/material';
-import { useToast } from '../../../hooks/useToast';
+import { useToast } from '../../hooks/useToast';
 
 // Custom styled Alert component for the toast
 const StyledAlert = styled(Alert)(({ theme }) => ({
@@ -13,16 +13,6 @@ const StyledAlert = styled(Alert)(({ theme }) => ({
 export function Snackbar() {
   const { open, message, severity, autoHideDuration, hideToast } = useToast();
   
-  // Map string severity to MUI severity type
-  const getMUISeverity = (sev) => {
-    switch(sev) {
-      case 'error': return 'error';
-      case 'success': return 'success';
-      case 'warning': return 'warning';
-      default: return 'info';
-    }
-  };
-  
   return (
     <Portal>
       <MUISnackbar
@@ -30,10 +20,11 @@ export function Snackbar() {
         autoHideDuration={autoHideDuration}
         onClose={hideToast}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-      >
-        <StyledAlert 
+      >        <StyledAlert 
           onClose={hideToast} 
-          severity={getMUISeverity(severity)}
+          severity={severity === 'error' ? 'error' : 
+                 severity === 'success' ? 'success' : 
+                 severity === 'warning' ? 'warning' : 'info'} 
           variant="filled"
           elevation={6}
         >

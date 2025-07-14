@@ -1,5 +1,5 @@
 import React from 'react';
-import { useToast as useToastHook } from '../../../hooks/useToast';
+import { useToast as useToastHook } from '../../hooks/useToast';
 import { Snackbar, Alert } from '@mui/material';
 
 export const MUIToaster = () => {

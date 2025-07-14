@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './hooks/useAuth';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { CircularProgress, Box, Typography, Alert } from '@mui/material';
-import LoginForm from './components/auth/LoginForm';
-import RegisterForm from './components/auth/RegisterForm';
-import IdentityVerification from './components/auth/IdentityVerification';
-import Dashboard from './components/dashboard/Dashboard';
-import AdminDashboard from './components/admin/AdminDashboard';
-import LiveMonitor from './components/admin/LiveMonitor';
-import PreTestCheck from './components/exam/PreTestCheck';
-import ExamInterface from './components/exam/ExamInterface';
-import SecureExamInterface from './components/exam/SecureExamInterface';
+import LoginForm from './pages/auth/LoginForm.jsx';
+import RegisterForm from './pages/auth/RegisterForm.jsx';
+import IdentityVerification from './pages/auth/IdentityVerification.jsx';
+import Dashboard from './pages/dashboard/Dashboard.jsx';
+import AdminDashboard from './pages/admin/AdminDashboard.jsx';
+import LiveMonitor from './pages/admin/LiveMonitor.jsx';
+import PreTestCheck from './pages/exam/PreTestCheck.jsx';
+import ExamInterface from './pages/exam/ExamInterface.jsx';
+import SecureExamInterface from './pages/exam/SecureExamInterface.jsx';
 import { ToastProvider } from './hooks/useToast';
-import { Snackbar as CustomSnackbar } from './components/ui/snackbar/snackbar.jsx';
+import { Snackbar as CustomSnackbar } from './components/snackbar/snackbar.js';
 import theme from './theme';
 import './App.css';
 
